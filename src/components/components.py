@@ -5,7 +5,7 @@ def custom_header(title):
 
 
 def custom_footer():
-    html_content = """
+    html_content = f"""
         <div class="custom-footer">
             <p>Creadores:</p>
             <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">Pablo Oller Pérez</a><br>
