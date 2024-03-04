@@ -76,10 +76,10 @@ def main():
 
     # Contenido de la página de Eto'o Bot
     elif st.session_state['page'] == 'Eto\'o Bot':
-        if st.session_state['df'] is not None and not st.session_state['df'].empty:
+        # if st.session_state['df'] is not None and not st.session_state['df'].empty:
             show_etoobot_page()
-        else:
-            st.error('Por favor, carga los datos en la página de Inicio primero.')
+        # else:
+            # st.error('Por favor, carga los datos en la página de Inicio primero.')
     
 
 
