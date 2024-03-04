@@ -75,7 +75,7 @@ def main():
     
 
 
-    # TODO: 
+    # TODO: Mantener (este mensaje) solo en home_page para mostrar "Predicción completa".
     # Mostrar en la página principal la opción seleccionada y el valor del slider
     st.write(f'Página actual: {st.session_state["page"]}')
 
