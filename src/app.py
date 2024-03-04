@@ -81,7 +81,6 @@ if __name__ == "__main__":
 
     # Pie de página con información de los creadores
     if st.session_state['page'] == 'Inicio':
-        
         # Footer de la página de inicio
         st.markdown(custom_footer(), unsafe_allow_html=True)
         
