@@ -47,4 +47,13 @@ def show_home_page():
 
     df['Median'] = df[columnas_median].mean(axis=1)
 
+
+    # Footer de la página de inicio
+    # Pie de página con información de los creadores
+    st.markdown('Creadores:')
+    st.page_link("https://www.linkedin.com/in/pablo-oller-perez-7995721b2", label="**Pablo Oller Pérez**")
+    st.page_link("https://www.linkedin.com/in/pablo-oller-perez-7995721b2", label="**Pablo Santos Quirce**")
+    st.page_link("https://www.linkedin.com/in/pablo-oller-perez-7995721b2", label="**Alejandro Castillo Carmona**")
+
+    
     return df
