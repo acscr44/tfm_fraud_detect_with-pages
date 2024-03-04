@@ -48,7 +48,7 @@ def show_analysis_page():
 
     # Especificar el inicio y el final
     # num_celda_inicio = 0  # Ajusta este valor según sea necesario
-    num_celda_final = 38  # Ajusta este valor según sea necesario
+    num_celda_final = 35  # Ajusta este valor según sea necesario
 
     # Mostrar el rango especificado de celdas del cuaderno en Streamlit
     mostrar_cuaderno_jupyter(nb, num_celda_final=num_celda_final)
@@ -63,7 +63,7 @@ def show_model_page():
     nb = cargar_cuaderno_jupyter(nb_path)
 
     # Especificar el inicio y el final
-    num_celda_inicio = 38  # Ajusta este valor según sea necesario
+    num_celda_inicio = 35  # Ajusta este valor según sea necesario
     # num_celda_final = 25  # Ajusta este valor según sea necesario
 
     # Mostrar el rango especificado de celdas del cuaderno en Streamlit
