@@ -40,3 +40,17 @@ WIDTH_STILE = """
         }
     </style>
     """
+
+FOOTER_STILE = """
+    <style>
+        .custom-footer {
+            background-color: #f0f2f6;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .custom-footer p {
+            color: #333;
+        }
+    </style>
+    """

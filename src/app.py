@@ -3,7 +3,7 @@ import pages as pg
 from home_page import show_home_page
 from prediction_page import show_prediction_page
 from etoo_bot import show_etoobot_page
-from components.components import custom_header, custom_title, custom_width
+from components.components import custom_header, custom_title, custom_width, custom_footer
 
 # Estilos  ###################################################################################
 
@@ -82,14 +82,10 @@ if __name__ == "__main__":
     # Pie de página con información de los creadores
     if st.session_state['page'] == 'Inicio':
         
-        # Añadir espacio antes del footer
-        st.markdown("<br><br><br><br>", unsafe_allow_html=True)
-        
         # Footer de la página de inicio
-        st.markdown('Creadores:')
-        st.markdown("[**Pablo Oller Pérez**](https://www.linkedin.com/in/pablo-oller-perez-7995721b2)")
-        st.markdown("[**Pablo Santos Quirce**](https://www.linkedin.com/in/pablo-oller-perez-7995721b2)")
-        st.markdown("[**Alejandro Castillo Carmona**](https://www.linkedin.com/in/pablo-oller-perez-7995721b2)")
+        st.markdown(custom_footer(), unsafe_allow_html=True)
+        
+        
 
 #    # Footer de la página de inicio
 #     # Pie de página con información de los creadores
