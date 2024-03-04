@@ -7,21 +7,24 @@ def cargar_cuaderno_jupyter(path):
     with open(path, 'r', encoding='utf-8') as f:
         return nbformat.read(f, as_version=4)
 
-def mostrar_cuaderno_jupyter(nb):
-    for cell in nb.cells:
+def mostrar_cuaderno_jupyter(nb, num_celda_inicio=0, num_celda_final=None):
+    for i, cell in enumerate(nb.cells):
+        # Si se especificó un número de celda final y se alcanza, detener el bucle
+        if num_celda_final is not None and i > num_celda_final:
+            break
+        # Continuar si el índice de la celda actual aún no ha alcanzado el número de celda de inicio
+        if i < num_celda_inicio:
+            continue
+        
         if cell.cell_type == 'markdown':
-            # Mostrar celdas Markdown directamente
             st.markdown(cell.source)
         elif cell.cell_type == 'code':
-            # Mostrar el código de la celda
             st.code(cell.source, language='python')
-            # Procesar y mostrar las salidas de la celda de código
             for output in cell.outputs:
                 if output.output_type == 'execute_result' or output.output_type == 'display_data':
                     if 'text/plain' in output.data:
                         st.text(output.data['text/plain'])
                     if 'image/png' in output.data:
-                        # Decodificar la imagen de base64 a bytes
                         base64_img = output.data['image/png']
                         img_bytes = base64.b64decode(base64_img)
                         st.image(img_bytes, use_column_width=True)
@@ -34,6 +37,7 @@ def mostrar_cuaderno_jupyter(nb):
 
 
 
+
 def show_analysis_page():
     st.subheader("Página de análisis")
     # Aquí puedes añadir más contenido para esta página
@@ -42,10 +46,32 @@ def show_analysis_page():
     nb_path = 'src/static/notebooks/modelo_tfm.ipynb'
     nb = cargar_cuaderno_jupyter(nb_path)
 
-    # Mostrar el cuaderno en Streamlit
-    mostrar_cuaderno_jupyter(nb)
+    # Especificar el inicio y el final
+    # num_celda_inicio = 0  # Ajusta este valor según sea necesario
+    num_celda_final = 25  # Ajusta este valor según sea necesario
+
+    # Mostrar el rango especificado de celdas del cuaderno en Streamlit
+    mostrar_cuaderno_jupyter(nb, num_celda_final=num_celda_final)
     
-    
+
+def show_model_page():
+    st.subheader("Página de modelo")
+    # Aquí puedes añadir más contenido para esta página   
+
+    # Cargar el cuaderno Jupyter
+    nb_path = 'src/static/notebooks/modelo_tfm.ipynb'
+    nb = cargar_cuaderno_jupyter(nb_path)
+
+    # Especificar el inicio y el final
+    num_celda_inicio = 25  # Ajusta este valor según sea necesario
+    # num_celda_final = 25  # Ajusta este valor según sea necesario
+
+    # Mostrar el rango especificado de celdas del cuaderno en Streamlit
+    mostrar_cuaderno_jupyter(nb, num_celda_inicio=num_celda_inicio)
+
+
+
+
 
     # st.markdown("""
     #     ## Importaciones de librerías necesarias
@@ -136,6 +162,4 @@ def show_analysis_page():
     # st.divider()
 
 
-def show_model_page():
-    st.subheader("Página de modelo")
-    # Aquí puedes añadir más contenido para esta página
+
