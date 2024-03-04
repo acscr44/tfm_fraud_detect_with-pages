@@ -9,7 +9,7 @@ def custom_footer():
             class="custom-footer">
             <p>Creadores:</p>
             <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">Pablo Oller Pérez</a><br>
-            <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">Pablo Santos Quirce</a><br>
+            <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b3" target="_blank">Pablo Santos Quirce</a><br>
             <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">Alejandro Castillo Carmona</a>
         </div>
         """
