@@ -34,6 +34,16 @@ def show_analysis_page():
         ccdf.head()
         ```
         ![Alt Text]({image_path})
+        """
+                )
+
+    st.divider()
+
+    st.markdown("""
+
+        ```python
+        
+        ```
         """, unsafe_allow_html=True
                 )
 
@@ -49,7 +59,6 @@ def show_analysis_page():
 
     st.divider()
 
-
     st.markdown("""
 
         ```python
@@ -60,7 +69,6 @@ def show_analysis_page():
 
     st.divider()
 
-
     st.markdown("""
 
         ```python
@@ -70,19 +78,6 @@ def show_analysis_page():
                 )
 
     st.divider()
-
-
-    st.markdown("""
-
-        ```python
-        
-        ```
-        """, unsafe_allow_html=True
-                )
-
-    st.divider()
-
-
 
     st.markdown("""
         ```python
