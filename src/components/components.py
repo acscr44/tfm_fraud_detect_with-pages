@@ -9,7 +9,7 @@ def custom_footer():
 
 
 def custom_title():
-    return styles.TITLE_STILE + f"""<div class="centered"><h1>{title}</h1></div>"""
+    return styles.TITLE_STILE
 
 def custom_width():
     return styles.WIDTH_STILE
