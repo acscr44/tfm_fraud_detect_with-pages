@@ -1,9 +1,4 @@
-# import numpy as np
-# import pandas as pd
 import streamlit as st
-# import matplotlib.pyplot as plt
-# import seaborn as sns
-import tabula
 import pages as pg
 from home_page import show_home_page
 from prediction_page import show_prediction_page
@@ -83,3 +78,22 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    # Pie de página con información de los creadores
+    if st.session_state['page'] == 'Inicio':
+        
+        # Añadir espacio antes del footer
+        st.markdown("<br><br><br><br>", unsafe_allow_html=True)
+        
+        # Footer de la página de inicio
+        st.markdown('Creadores:')
+        st.markdown("[**Pablo Oller Pérez**](https://www.linkedin.com/in/pablo-oller-perez-7995721b2)")
+        st.markdown("[**Pablo Santos Quirce**](https://www.linkedin.com/in/pablo-oller-perez-7995721b2)")
+        st.markdown("[**Alejandro Castillo Carmona**](https://www.linkedin.com/in/pablo-oller-perez-7995721b2)")
+
+#    # Footer de la página de inicio
+#     # Pie de página con información de los creadores
+#     st.markdown('Creadores:')
+#     st.page_link("https://www.linkedin.com/in/pablo-oller-perez-7995721b2", label="**Pablo Oller Pérez**")
+#     st.page_link("https://www.linkedin.com/in/pablo-oller-perez-7995721b2", label="**Pablo Santos Quirce**")
+#     st.page_link("https://www.linkedin.com/in/pablo-oller-perez-7995721b2", label="**Alejandro Castillo Carmona**")
