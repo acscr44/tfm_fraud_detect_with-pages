@@ -1,0 +1,27 @@
+FROM python:3.10.12
+
+WORKDIR /app
+
+RUN apt-get update 
+RUN apt-get install -y openjdk-17-jdk
+# Instalar dependencias básicas primero
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+# RUN pip install  -r requirements.txt
+# RUN pip install --no-cache-dir streamlit
+
+# Luego instalar dependencias de desarrollo
+# COPY requirements_dev.txt /app/
+# RUN pip install --no-cache-dir -r requirements_dev.txt
+ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk
+# Ahora copiamos el resto de los archivos
+COPY src/ /app/
+# COPY src/data/* /app/src/data/
+# # COPY image/* /app/image/
+# COPY src/model/* /app/model/
+# COPY src/components/* /app/components/
+# COPY src/static/* /app/static/
+
+EXPOSE 8501
+
+ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
