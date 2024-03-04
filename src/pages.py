@@ -1,5 +1,7 @@
 import nbformat
 import streamlit as st
+import base64
+from io import BytesIO
 
 def cargar_cuaderno_jupyter(path):
     with open(path, 'r', encoding='utf-8') as f:
@@ -19,7 +21,10 @@ def mostrar_cuaderno_jupyter(nb):
                     if 'text/plain' in output.data:
                         st.text(output.data['text/plain'])
                     if 'image/png' in output.data:
-                        st.image(output.data['image/png'], use_column_width=True)
+                        # Decodificar la imagen de base64 a bytes
+                        base64_img = output.data['image/png']
+                        img_bytes = base64.b64decode(base64_img)
+                        st.image(img_bytes, use_column_width=True)
                     if 'text/html' in output.data:
                         st.markdown(output.data['text/html'], unsafe_allow_html=True)
                 elif output.output_type == 'stream':
