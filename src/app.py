@@ -12,14 +12,8 @@ from components.components import custom_header, custom_title, custom_width
 
 # Estilos  ###################################################################################
 
-# style_width = """
-#     <style>
-#         .appview-container  .main  .block-container{
-#             max-width: 60%;
-#         }
-#     </style>
-#     """
-st.write(custom_width(), unsafe_allow_html=True)
+st.markdown(custom_width(), unsafe_allow_html=True)
+
 # Estilo CSS para el título y pie de página
 st.markdown(custom_title(), unsafe_allow_html=True)
 
@@ -41,7 +35,6 @@ st.markdown("""<br>""", unsafe_allow_html=True)
 
 def main():
 
-    st.write(tabula.environment_info())
     # Inicialización de 'page' en st.session_state
     if 'page' not in st.session_state:
         st.session_state['page'] = 'Inicio'
