@@ -2,8 +2,20 @@ FROM python:3.10.12
 
 WORKDIR /app
 
-RUN apt-get update 
-RUN apt-get install -y openjdk-17-jdk
+# RUN apt-get update 
+# RUN apt-get install -y openjdk-17-jdk
+
+# Instala Java
+RUN apt-get update && \
+    apt-get install -y openjdk-17-jdk && \
+    apt-get clean;
+
+# Configura JAVA_HOME y añade el directorio bin de Java al PATH
+ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH $JAVA_HOME/bin:$PATH
+
+# ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk
+
 # Instalar dependencias básicas primero
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
@@ -13,7 +25,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Luego instalar dependencias de desarrollo
 # COPY requirements_dev.txt /app/
 # RUN pip install --no-cache-dir -r requirements_dev.txt
-ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk
 # Ahora copiamos el resto de los archivos
 COPY src/ /app/
 COPY src/model/ /app/model/
