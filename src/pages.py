@@ -27,7 +27,7 @@ def show_analysis_page():
                 )
 
     st.divider()
-    image_path = "/src/static/image/ccdf_V_Preparacion_de_datos.jpg"
+    image_path = "src/static/image/ccdf_V_Preparacion_de_datos.jpg"
     st.markdown(f"""
         ## Exploración, visualización y tratamiento de los datos
         ```python
