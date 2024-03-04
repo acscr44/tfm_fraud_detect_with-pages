@@ -103,7 +103,7 @@ def show_prediction_page(df):
             cluster_data = df[df['Cluster'] == cluster]
 
             # Plotea los datos con un color diferente para cada cluster
-            plt.scatter(cluster_data['Median'], cluster_data['Amount'], label=cluster_labels_2)
+            plt.scatter(cluster_data['Median'], cluster_data['Amount'], label=f'{cluster_labels_2[cluster]}')
 
         plt.title('Distribución de Transacciones por Clusters')
         plt.xlabel('Mediana de V1-V28')

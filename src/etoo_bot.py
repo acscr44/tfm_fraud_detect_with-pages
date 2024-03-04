@@ -3,7 +3,6 @@ import openai
 
 
 def show_etoobot_page():
-        st.subheader('Eto\'o Bot')
         # inicio del chatbot
         st.markdown("<h1 class='title'>Eto'o Bot</h1>", unsafe_allow_html=True)
 
