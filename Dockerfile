@@ -11,7 +11,7 @@ RUN apt-get update && \
     apt-get clean;
 
 # Configura JAVA_HOME y añade el directorio bin de Java al PATH
-ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk
 ENV PATH $JAVA_HOME/bin:$PATH
 
 # ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk
