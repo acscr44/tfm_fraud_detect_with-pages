@@ -11,10 +11,10 @@ columnas = ['Time', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10',
             'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'Amount']
 
 # carga del modelo de detección de fraude
-modelo = joblib.load('model/modelo_fraud_detect.pkl')
+modelo = joblib.load('src/model/modelo_fraud_detect.pkl')
 
 # carga del modelo de clustering
-modelo_clustering = joblib.load('model/clustering_fraud_detect.pkl')
+modelo_clustering = joblib.load('src/model/clustering_fraud_detect.pkl')
 
 def show_prediction_page(df):
     st.subheader("Predicciones de Fraude")
