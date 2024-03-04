@@ -8,18 +8,20 @@ import pages as pg
 from home_page import show_home_page
 from prediction_page import show_prediction_page
 from etoo_bot import show_etoobot_page
-from components.components import custom_header
+from components.components import custom_header, custom_title, custom_width
 
 # Estilos  ###################################################################################
 
-style_width = """
-    <style>
-        .appview-container  .main  .block-container{
-            max-width: 60%;
-        }
-    </style>
-    """
-st.markdown(style_width, unsafe_allow_html=True)
+# style_width = """
+#     <style>
+#         .appview-container  .main  .block-container{
+#             max-width: 60%;
+#         }
+#     </style>
+#     """
+st.markdown(custom_width(), unsafe_allow_html=True)
+# Estilo CSS para el título y pie de página
+st.markdown(custom_title(), unsafe_allow_html=True)
 
 ### Cabecera  ##################################################################################
 

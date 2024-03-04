@@ -21,3 +21,22 @@ BODY_STILE = """
         }
     </style>
     """
+
+TITLE_STILE = """
+    <style>
+    .centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    </style>
+    """
+
+WIDTH_STILE = """
+    <style>
+        .appview-container  .main  .block-container{
+            max-width: 60%;
+        }
+    </style>
+    """
