@@ -25,13 +25,6 @@ st.markdown("""<br>""", unsafe_allow_html=True)
 
 ### Sidebar  ##################################################################################
 
-# with st.sidebar:
-#     st.header('Menú Principal')
-#     st.session_state['page'] = st.selectbox(
-#         'Elige una opción:',
-#         ('Inicio', 'Análisis Exploratorio', 'Modelo', 'Predicción'),
-#         key='page_selector'
-#     )
 
 def main():
 
@@ -71,10 +64,7 @@ def main():
 
     # Contenido de la página de Eto'o Bot
     elif st.session_state['page'] == 'Eto\'o Bot':
-        # if st.session_state['df'] is not None and not st.session_state['df'].empty:
             show_etoobot_page()
-        # else:
-            # st.error('Por favor, carga los datos en la página de Inicio primero.')
     
 
 
@@ -85,7 +75,7 @@ def main():
     
 
 
-
+    # TODO: 
     # Mostrar en la página principal la opción seleccionada y el valor del slider
     st.write(f'Página actual: {st.session_state["page"]}')
 
