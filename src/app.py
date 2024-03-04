@@ -3,6 +3,7 @@
 import streamlit as st
 # import matplotlib.pyplot as plt
 # import seaborn as sns
+import tabula
 import pages as pg
 from home_page import show_home_page
 from prediction_page import show_prediction_page
@@ -37,6 +38,8 @@ st.markdown("""<br>""", unsafe_allow_html=True)
 #     )
 
 def main():
+
+    st.write(tabula.environment_info())
     # Inicialización de 'page' en st.session_state
     if 'page' not in st.session_state:
         st.session_state['page'] = 'Inicio'
