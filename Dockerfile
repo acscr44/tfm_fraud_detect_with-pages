@@ -16,6 +16,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk
 # Ahora copiamos el resto de los archivos
 COPY src/ /app/
+COPY src/model/ /app/model/
 # COPY src/data/* /app/src/data/
 # # COPY image/* /app/image/
 # COPY src/model/* /app/model/
