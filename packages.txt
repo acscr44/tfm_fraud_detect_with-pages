@@ -1,1 +1,1 @@
-openjdk-17-jdk
+/mount/openjdk-17-jdk
