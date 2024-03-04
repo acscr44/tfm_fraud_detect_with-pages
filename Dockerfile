@@ -8,6 +8,8 @@ FROM python:3.10.12
 RUN apt-get update 
 RUN apt-get install -y openjdk-17-jdk
 
+WORKDIR /app
+
 # Configura JAVA_HOME y añade el directorio bin de Java al PATH
 # ENV PATH $JAVA_HOME/bin:$PATH
 ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk
@@ -34,5 +36,4 @@ COPY src/ /app/
 
 EXPOSE 8501
 
-WORKDIR /app
 ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]

@@ -84,7 +84,7 @@ def main():
 
 
     # Botón para cambiar a la página de Predicción
-    if st.session_state['page'] != 'Predicción':
+    if st.session_state['page'] not in ['Predicción', 'Análisis Exploratorio', 'Modelo', 'Eto\'o Bot']:
         if st.button('Genera Predicción'):
             st.session_state['page'] = 'Predicción'  # Esto debería actualizar el selectbox automáticamente
     
