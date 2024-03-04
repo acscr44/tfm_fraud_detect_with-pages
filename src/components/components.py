@@ -5,16 +5,15 @@ def custom_header(title):
 
 
 def custom_footer():
-    html_content=f"""
-            {styles.FOOTER_STILE}
-            <div class="custom-footer">
+    html_content = """
+            class="custom-footer">
             <p>Creadores:</p>
             <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">Pablo Oller Pérez</a><br>
             <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">Pablo Santos Quirce</a><br>
             <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">Alejandro Castillo Carmona</a>
         </div>
         """
-    return html_content
+    return styles.FOOTER_STILE + html_content
 
 
 def custom_title():
