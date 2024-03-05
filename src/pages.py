@@ -54,6 +54,7 @@ def scroll_to_top():
 
 
 def show_analysis_page():
+    st.empty()
     scroll_to_top()
     # Titulo de la aplicación
     st.markdown(custom_title('Fraud-Detect'), unsafe_allow_html=True)
@@ -74,6 +75,7 @@ def show_analysis_page():
     
 
 def show_model_page():
+    st.empty()
     scroll_to_top()
     # st.subheader("Entrenamiento del Modelo")
     # Aquí puedes añadir más contenido para esta página   
