@@ -6,6 +6,7 @@ def custom_header(title):
 
 def custom_footer():
     html_content = f"""
+        {styles.FOOTER_STYLE}
         <div class="custom-footer">
             <p>Creadores:</p>
             <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">Pablo Oller Pérez</a><br>
@@ -13,7 +14,7 @@ def custom_footer():
             <a href="https://github.com/acscr44" target="_blank">Alejandro Castillo Carmona</a>
         </div>
         """
-    return styles.FOOTER_STILE + html_content
+    return html_content
 
 
 def custom_title():

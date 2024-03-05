@@ -41,7 +41,7 @@ WIDTH_STILE = """
     </style>
     """
 
-FOOTER_STILE = """
+FOOTER_STYLE = """
     <style>
         .custom-footer {
             padding: 10px;
