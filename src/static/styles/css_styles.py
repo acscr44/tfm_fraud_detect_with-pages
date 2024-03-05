@@ -46,7 +46,7 @@ FOOTER_STYLE = """
         .custom-footer {
             bottom: 0;
             padding: 1rem;
-            margin-top: 5rem;
+            margin-top: 55rem;
             font-size: 16px;
             text-align: center;    
             width: 100%;
