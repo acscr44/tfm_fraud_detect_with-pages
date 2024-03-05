@@ -76,7 +76,9 @@ def main():
     # Botón para cambiar a la página de Predicción
     if st.session_state['page'] not in ['Predicción', 'Análisis Exploratorio', 'Modelo', 'Eto\'o Bot']:
         if st.button('Genera Predicción'):
-            st.session_state['page'] = 'Predicción'  # Esto debería actualizar el selectbox automáticamente
+            if st.session_state.get('df') is not None and not st.session_state['df'].empty:
+                st.session_state['prediction_generated'] = True
+                st.session_state['page'] = 'Predicción'  # Esto debería actualizar el selectbox automáticamente
     
 
     # TO-DO: Mantener (este mensaje) solo en home_page para mostrar "Predicción completa".
