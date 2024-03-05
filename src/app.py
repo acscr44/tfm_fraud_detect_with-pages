@@ -12,7 +12,14 @@ from components.components import custom_header, custom_title, custom_width, cus
 st.set_page_config(
     page_title="Fraud-Detect",
     page_icon="💳",
-    initial_sidebar_state="expanded",  
+    initial_sidebar_state="expanded", 
+    theme={
+        'primaryColor': '#1d3557',
+        'backgroundColor': '#457b9d',
+        'secondaryBackgroundColor': '#219ebc',
+        'textColor': '#f1faee',
+        'font': 'sans serif'
+    } 
 )
 
 st.markdown(custom_width(), unsafe_allow_html=True)
