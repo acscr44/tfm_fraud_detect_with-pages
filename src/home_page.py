@@ -58,27 +58,36 @@ columnas = ['Time', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10',
 
 def show_home_page():
     st.subheader("Página de Inicio")
-    if 'uploaded_files' not in st.session_state:
-        st.session_state.uploaded_files = st.file_uploader("Elige tus archivos PDF", type="pdf", accept_multiple_files=True, key='home_page_file_uploader')
+    if 'df' not in st.session_state or st.button('Cargar un nuevo archivo'):
+        uploaded_files = st.file_uploader("Elige tus archivos PDF", type="pdf", accept_multiple_files=True, key='home_page_file_uploader')
+        if uploaded_files is not None:
+            # creación del dataframe
+            df = pd.DataFrame(columns=columnas)
+            for uploaded_file in uploaded_files:
+                if uploaded_file is not None:
+                    # lectura de las tablas de los archivos
+                    df_temp_list = tabula.read_pdf(uploaded_file, pages='all')
+                    for df_temp in df_temp_list:
+                        # comprueba si es un dataframe
+                        if isinstance(df_temp, pd.DataFrame):
+                            # comprueba si tiene las columnas correctas
+                            if set(columnas).issubset(df_temp.columns):
+                                # concatenación al dataframe principal
+                                df = pd.concat([df, df_temp], ignore_index=True)
+                            else:
+                                st.write(f"El archivo {uploaded_file.name} no tiene las columnas correctas.")
+                        else:
+                            st.write(f"El archivo {uploaded_file.name} no contiene ninguna tabla.")
+            
+            # Aplicar procesamiento adicional al DataFrame
+            pd.set_option('future.no_silent_downcasting', True)
+            df = df.replace(',', '.', regex=True).astype(float)
+            df['Median'] = df[columnas_median].mean(axis=1)
+            
+            # Almacenar el DataFrame en el estado de la sesión
+            st.session_state['df'] = df
 
-    if st.session_state.uploaded_files is not None and ('df' not in st.session_state or st.button('Recargar datos')):
-        df = pd.DataFrame(columns=columnas)
-        for uploaded_file in st.session_state.uploaded_files:
-            # Proceso para cargar y concatenar los datos de los archivos al DataFrame `df`
-            df_temp_list = tabula.read_pdf(uploaded_file, pages='all')
-            for df_temp in df_temp_list:
-                if isinstance(df_temp, pd.DataFrame) and set(columnas).issubset(df_temp.columns):
-                    df = pd.concat([df, df_temp], ignore_index=True)
-        
-        # Realizar la limpieza y transformaciones necesarias en `df`
-        pd.set_option('future.no_silent_downcasting', True)
-        df.replace(',', '.', regex=True, inplace=True)
-        df = df.astype(float)
-        df['Median'] = df[columnas_median].mean(axis=1)
+    if 'df' in st.session_state and st.session_state['df'] is not None:
+        st.dataframe(st.session_state['df'])
 
-        # Almacenar el DataFrame en el estado de la sesión
-        st.session_state.df = df
-
-    # Si ya existe un DataFrame en el estado de la sesión, opcionalmente mostrarlo o realizar acciones adicionales
-    if 'df' in st.session_state and st.session_state.df is not None:
-        st.dataframe(st.session_state.df)
+    # Ya no es necesario 'return df' porque el DataFrame se maneja a través de st.session_state
