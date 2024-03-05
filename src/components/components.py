@@ -1,11 +1,12 @@
-from static.styles import styles
+from static.styles.styles import *
+# from static.styles.styles import FOOTER_STYLE
 
 def custom_header(title):
-    return styles.HEADER_STILE + f"""<div class="custom-header"><h2>{title}</h2></div>"""
+    return HEADER_STILE + f"""<div class="custom-header"><h2>{title}</h2></div>"""
 
 
 def custom_footer():
-    html_content = styles.FOOTER_STYLE + f"""
+    html_content = FOOTER_STYLE + f"""
         <div class="custom-footer">
             <p>Creadores:</p>
             <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">Pablo Oller Pérez</a><br>
@@ -17,7 +18,7 @@ def custom_footer():
 
 
 def custom_title():
-    return styles.TITLE_STILE
+    return TITLE_STILE
 
 def custom_width():
-    return styles.WIDTH_STILE
+    return WIDTH_STILE
