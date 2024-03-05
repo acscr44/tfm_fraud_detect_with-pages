@@ -47,14 +47,10 @@ def mostrar_cuaderno_jupyter(nb, num_celda_inicio=0, num_celda_final=None):
 
 # Estrategia para mantener el scroll al comienzo de cada página
 def scroll_to_top():
-    st.markdown(
-        "<script>window.scrollTo(0,0);</script>",
-        unsafe_allow_html=True,
-    )
+    st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
 
 
 def show_analysis_page():
-    st.empty()
     scroll_to_top()
     # Titulo de la aplicación
     st.markdown(custom_title('Fraud-Detect'), unsafe_allow_html=True)
@@ -75,7 +71,6 @@ def show_analysis_page():
     
 
 def show_model_page():
-    st.empty()
     scroll_to_top()
     # st.subheader("Entrenamiento del Modelo")
     # Aquí puedes añadir más contenido para esta página   
