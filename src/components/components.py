@@ -38,7 +38,7 @@ def custom_width():
 def description():
     html_content = f"""
     <div>
-        <p>**Fraud Detect** es una aplicación web diseñada para abordar de manera eficiente y precisa la detección de 
+        <p><strong>Fraud Detect</strong> es una aplicación web diseñada para abordar de manera eficiente y precisa la detección de 
         posibles fraudes bancarios. Su funcionalidad radica en la capacidad de procesar documentos en formato PDF, 
         extrayendo las tablas contenidas en ellos mediante su lector integrado. A partir de los datos recopilados en 
         estas tablas, la aplicación lleva a cabo un exhaustivo análisis para identificar posibles irregularidades 
