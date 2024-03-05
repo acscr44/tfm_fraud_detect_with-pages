@@ -61,7 +61,7 @@ def show_analysis_page():
     # Cargar el cuaderno Jupyter
     nb_path = 'src/static/notebooks/modelo_tfm.ipynb'
     with st.spinner('Cargando análisis...'):
-    # Cargar y mostrar el contenido pesado aquí
+        # Cargar y mostrar el contenido pesado aquí
         nb = cargar_cuaderno_jupyter(nb_path)
 
         # Especificar el inicio y el final
@@ -83,13 +83,15 @@ def show_model_page():
 
     # Cargar el cuaderno Jupyter
     nb_path = 'src/static/notebooks/modelo_tfm.ipynb'
-    nb = cargar_cuaderno_jupyter(nb_path)
+    with st.spinner('Cargando modelo...'):
+        # Cargar y mostrar el contenido pesado aquí
+        nb = cargar_cuaderno_jupyter(nb_path)
 
-    # Especificar el inicio y el final
-    num_celda_inicio = 34  # Ajusta este valor según sea necesario
-    # num_celda_final = 25  # Ajusta este valor según sea necesario
+        # Especificar el inicio y el final
+        num_celda_inicio = 34  # Ajusta este valor según sea necesario
+        # num_celda_final = 25  # Ajusta este valor según sea necesario
 
-    # Mostrar el rango especificado de celdas del cuaderno en Streamlit
-    mostrar_cuaderno_jupyter(nb, num_celda_inicio=num_celda_inicio)
+        # Mostrar el rango especificado de celdas del cuaderno en Streamlit
+        mostrar_cuaderno_jupyter(nb, num_celda_inicio=num_celda_inicio)
 
     placeholder.empty()
