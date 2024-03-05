@@ -4,7 +4,6 @@ import joblib
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import seaborn as sns
-import openai
 from components.components import custom_title
 
 columnas = ['Time', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10',
@@ -139,6 +138,7 @@ def show_prediction_page():
             # # Muestra el gráfico en Streamlit
             # # if on:
             # st.pyplot(plt)
+            
             # Crea un gráfico de barras para mostrar la cantidad de transacciones fraudulentas vs. no fraudulentas
             plt.figure(figsize=(8, 6))
             ax = sns.countplot(x="Class", data=df)
@@ -149,11 +149,11 @@ def show_prediction_page():
 
             # Añade el número de cuentas encima de cada barra
             for p in ax.patches:
-                ax.annotate(f'{p.get_height()}', (p.get_x() + p.get_width() / 2., p.get_height()), ha='center', va='center', fontsize=11, color='gray', xytext=(0, 5), textcoords='offset points')
-
+                height = p.get_height()
+                ax.annotate(f'{height}', (p.get_x() + p.get_width() / 2., height), ha='center', va='center', fontsize=11, color='gray', xytext=(0, 5), textcoords='offset points')
+            
             # Muestra el gráfico en Streamlit
             st.pyplot(plt)
-
             st.divider()
 
     else:
