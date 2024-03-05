@@ -83,7 +83,7 @@ def main():
     # Mensaje de estado del procesamiento y predicción
     if st.session_state['page'] == 'Inicio' and st.session_state.get('df') is not None:
         st.success('Fichero procesado correctamente.')
-    elif st.session_state['prediction_generated']:
+    elif st.session_state['page'] == 'Predicción' and st.session_state['prediction_generated']:
         st.success('Predicción completada.')
         
     # # Mostrar en la página principal la opción seleccionada y el valor del slider
