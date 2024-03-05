@@ -52,7 +52,7 @@ def show_analysis_page():
     # Titulo de la aplicación
     st.markdown(custom_title('Fraud-Detect'), unsafe_allow_html=True)
 
-    st.subheader("Página de análisis")
+    st.subheader("Análisis Exploratorio")
     # Aquí puedes añadir más contenido para esta página
 
     # Cargar el cuaderno Jupyter
@@ -68,7 +68,7 @@ def show_analysis_page():
     
 
 def show_model_page():
-    st.subheader("Página de modelo")
+    st.subheader("Entrenamiento del Modelo")
     # Aquí puedes añadir más contenido para esta página   
 
     # Cargar el cuaderno Jupyter
