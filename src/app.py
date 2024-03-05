@@ -70,11 +70,17 @@ def main():
     
 
 
-    # TODO: Mantener (este mensaje) solo en home_page para mostrar "Predicción completa".
+    # TO-DO: Mantener (este mensaje) solo en home_page para mostrar "Predicción completa".
     # Mostrar en la página principal la opción seleccionada y el valor del slider
     st.write(f'Página actual: {st.session_state["page"]}')
 
 
+#    # Footer de la página de inicio
+#     # Pie de página con información de los creadores
+#     st.markdown('Creadores:')
+#     st.page_link("https://www.linkedin.com/in/pablo-oller-perez-7995721b2", label="**Pablo Oller Pérez**")
+#     st.page_link("https://www.linkedin.com/in/pablo-oller-perez-7995721b2", label="**Pablo Santos Quirce**")
+#     st.page_link("https://www.linkedin.com/in/pablo-oller-perez-7995721b2", label="**Alejandro Castillo Carmona**")
 
 if __name__ == "__main__":
     main()
@@ -85,10 +91,3 @@ if __name__ == "__main__":
         st.markdown(custom_footer(), unsafe_allow_html=True)
         
         
-
-#    # Footer de la página de inicio
-#     # Pie de página con información de los creadores
-#     st.markdown('Creadores:')
-#     st.page_link("https://www.linkedin.com/in/pablo-oller-perez-7995721b2", label="**Pablo Oller Pérez**")
-#     st.page_link("https://www.linkedin.com/in/pablo-oller-perez-7995721b2", label="**Pablo Santos Quirce**")
-#     st.page_link("https://www.linkedin.com/in/pablo-oller-perez-7995721b2", label="**Alejandro Castillo Carmona**")
