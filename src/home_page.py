@@ -89,4 +89,4 @@ def show_home_page():
         columnas_median = [col for col in columnas if col not in ['Time', 'Amount']]
         df['Median'] = df[columnas_median].mean(axis=1)
         # Mostrar el DataFrame como prueba de la carga
-        st.write(df)
+        # st.write(df)
