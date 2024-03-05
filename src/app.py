@@ -9,7 +9,7 @@ from components.components import custom_header, custom_title, custom_width, cus
 # Configuración de la página ##################################################################
 
 st.set_page_config(
-    # page_title="Fraud-Detect",
+    page_title="Fraud-Detect",
     page_icon="💳",
     initial_sidebar_state="expanded",
   
@@ -39,7 +39,6 @@ st.markdown("""
 ### Cabecera  ##################################################################################
 
 # inicio de fraud detect
-st.markdown("<h1 class='title'>Fraud-Detect</h1>", unsafe_allow_html=True)
 st.markdown(custom_header('Fraud-Detect'), unsafe_allow_html=True)
 st.markdown("""<br>""", unsafe_allow_html=True)
 # Breve descripción de la aplicación
