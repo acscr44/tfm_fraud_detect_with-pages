@@ -1,4 +1,5 @@
-from static.styles.styles import *
+import static.styles
+# from static.styles.styles import *
 # from static.styles.styles import FOOTER_STYLE
 
 def custom_header(title):
