@@ -10,7 +10,7 @@ from components.components import custom_header, custom_title, custom_width, cus
 st.markdown(custom_width(), unsafe_allow_html=True)
 
 # Estilo CSS para el título y pie de página
-st.markdown(custom_title(), unsafe_allow_html=True)
+# st.markdown(custom_title(), unsafe_allow_html=True)
 
 ### Cabecera  ##################################################################################
 
