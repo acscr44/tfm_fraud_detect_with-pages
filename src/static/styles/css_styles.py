@@ -44,11 +44,13 @@ WIDTH_STILE = """
 FOOTER_STYLE = """
     <style>
         .custom-footer {
+            bottom: 0;
             padding: 1rem;
             margin-top: 5rem;
             font-size: 16px;
             text-align: center;    
-            width: 100%;        
+            width: 100%;
+            border-top: 1px solid #aaa;     
         }
 
         .custom-footer p {
