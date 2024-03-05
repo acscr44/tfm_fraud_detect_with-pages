@@ -17,6 +17,9 @@ modelo = joblib.load('src/model/modelo_fraud_detect.pkl')
 modelo_clustering = joblib.load('src/model/clustering_fraud_detect.pkl')
 
 def show_prediction_page():
+    # Titulo de la aplicación
+    st.markdown(custom_title('Fraud-Detect'), unsafe_allow_html=True)
+    
     st.subheader("Predicciones de Fraude")
 
     # Verifica que el DataFrame exista y no esté vacío
