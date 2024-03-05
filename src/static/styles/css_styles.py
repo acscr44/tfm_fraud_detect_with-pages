@@ -24,12 +24,10 @@ BODY_STILE = """
 
 TITLE_STILE = """
     <style>
-    .centered {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-    }
+        .title {
+            text-align: center;
+            color: #1D3557;
+        }
     </style>
     """
 

@@ -5,17 +5,45 @@ from prediction_page import show_prediction_page
 from etoo_bot import show_etoobot_page
 from components.components import custom_header, custom_title, custom_width, custom_footer
 
+
+# Configuración de la página ##################################################################
+
+st.set_page_config(
+    page_title="Fraud-Detect",
+    page_icon="💳",
+    initial_sidebar_state="expanded",
+  
+)
+
 # Estilos  ###################################################################################
 
 st.markdown(custom_width(), unsafe_allow_html=True)
 
 # Estilo CSS para el título y pie de página
-# st.markdown(custom_title(), unsafe_allow_html=True)
+st.markdown(custom_title(), unsafe_allow_html=True)
+# Estilo CSS para el título
+st.image("src/static/image/banner.webp", use_column_width=True, output_format='auto')
+st.markdown("""
+   <style>
+   .title {
+      text-align: center;
+      color: #1D3557;
+   }
+   
+   </style>
+""", unsafe_allow_html=True)
+
+
+
 
 ### Cabecera  ##################################################################################
 
-st.markdown(custom_header('Fraud Credit Card App'), unsafe_allow_html=True)
+# inicio de fraud detect
+st.markdown("<h1 class='title'>Fraud-Detect</h1>", unsafe_allow_html=True)
+st.markdown(custom_header('Fraud-Detect'), unsafe_allow_html=True)
 st.markdown("""<br>""", unsafe_allow_html=True)
+# Breve descripción de la aplicación
+st.write("**Fraud Detect** es una aplicación web diseñada para abordar de manera eficiente y precisa la detección de posibles fraudes bancarios. Su funcionalidad radica en la capacidad de procesar documentos en formato PDF, extrayendo las tablas contenidas en ellos mediante su lector integrado. A partir de los datos recopilados en estas tablas, la aplicación lleva a cabo un exhaustivo análisis para identificar posibles irregularidades financieras que puedan indicar la presencia de actividades fraudulentas entre una lista de clientes. Además muestra una sucesión de gráficas con datos que pueden ser de utilidad para el usuario.")
 
 
 ### Sidebar  ##################################################################################

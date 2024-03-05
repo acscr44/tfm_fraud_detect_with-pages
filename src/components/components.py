@@ -2,7 +2,7 @@ from static.styles.css_styles import *
 
 
 def custom_header(title):
-    return HEADER_STILE + f"""<div class="custom-header"><h2>{title}</h2></div>"""
+    return TITLE_STILE + f"""<div class="custom-header"><h1 class='title'>{title}</h1></div>"""
 
 
 def custom_footer():
