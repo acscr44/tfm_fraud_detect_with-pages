@@ -6,7 +6,8 @@ def custom_header(title):
 
 
 def custom_footer():
-    html_content = css.FOOTER_STYLE + f"""
+    html_content = f"""
+        {css.FOOTER_STYLE}
         <div class="custom-footer">
             <p>Creadores:</p>
             <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">Pablo Oller Pérez</a><br>
