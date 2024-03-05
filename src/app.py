@@ -1,5 +1,6 @@
 import streamlit as st
 import pages as pg
+from pages import show_analysis_page, show_model_page
 from home_page import show_home_page
 from prediction_page import show_prediction_page
 from etoo_bot import show_etoobot_page
@@ -63,9 +64,9 @@ def main():
 
     # Contenido de otras páginas
     elif st.session_state['page'] == 'Análisis Exploratorio':
-        pg.show_analysis_page()
+        show_analysis_page()
     elif st.session_state['page'] == 'Modelo':
-        pg.show_model_page()
+        show_model_page()
 
     # Contenido de la página de Eto'o Bot
     elif st.session_state['page'] == 'Eto\'o Bot':
