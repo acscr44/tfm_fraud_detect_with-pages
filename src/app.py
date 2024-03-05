@@ -9,7 +9,7 @@ from components.components import custom_header, custom_title, custom_width, cus
 # Configuración de la página ##################################################################
 
 st.set_page_config(
-    page_title="Fraud-Detect",
+    # page_title="Fraud-Detect",
     page_icon="💳",
     initial_sidebar_state="expanded",
   
