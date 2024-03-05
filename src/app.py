@@ -81,7 +81,13 @@ def main():
                 st.session_state['page'] = 'Predicción'  # Esto debería actualizar el selectbox automáticamente
     
 
- 
+    # TO-DO: Mantener (este mensaje) solo en home_page para mostrar "Predicción completa".
+    # Mensaje de estado del procesamiento y predicción
+    if st.session_state['page'] == 'Predicción' and st.session_state['prediction_requested']:
+        st.success('Predicción completada.')
+        
+    # # Mostrar en la página principal la opción seleccionada y el valor del slider
+    # st.write(f'Página actual: {st.session_state["page"]}')
 
     # Pie de página con información de los creadores
     if st.session_state['page'] == 'Inicio':
