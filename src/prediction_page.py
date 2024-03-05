@@ -5,6 +5,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 import seaborn as sns
 import openai
+from components.components import custom_title
 
 columnas = ['Time', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10',
             'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20',
@@ -19,7 +20,7 @@ modelo_clustering = joblib.load('src/model/clustering_fraud_detect.pkl')
 def show_prediction_page():
     # Titulo de la aplicación
     st.markdown(custom_title('Fraud-Detect'), unsafe_allow_html=True)
-    
+
     st.subheader("Predicciones de Fraude")
 
     # Verifica que el DataFrame exista y no esté vacío
