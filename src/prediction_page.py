@@ -124,37 +124,5 @@ def show_prediction_page():
             st.pyplot(plt)
             st.divider()
 
-            # Configura el estilo del gráfico
-            sns.set_theme(style="whitegrid")
-                
-            # # Crea un gráfico de barras para mostrar la cantidad de transacciones fraudulentas vs. no fraudulentas
-            # plt.figure(figsize=(8, 6))
-            # ax = sns.countplot(x="Class", data=df)
-            # ax.set_title('Distribución de Predicciones de Fraude')
-            # ax.set_xticklabels(['No Fraude', 'Fraude'])
-            # ax.set_xlabel('Categoría')
-            # ax.set_ylabel('Número de Transacciones')
-
-            # # Muestra el gráfico en Streamlit
-            # # if on:
-            # st.pyplot(plt)
-            
-            # Crea un gráfico de barras para mostrar la cantidad de transacciones fraudulentas vs. no fraudulentas
-            plt.figure(figsize=(8, 6))
-            ax = sns.countplot(x="Class", data=df)
-            ax.set_title('Distribución de Predicciones de Fraude')
-            ax.set_xticklabels(['No Fraude', 'Fraude'])
-            ax.set_xlabel('Categoría')
-            ax.set_ylabel('Número de Transacciones')
-
-            # Añade el número de cuentas encima de cada barra
-            for p in ax.patches:
-                height = p.get_height()
-                ax.annotate(f'{height}', (p.get_x() + p.get_width() / 2., height), ha='center', va='center', fontsize=11, color='gray', xytext=(0, 5), textcoords='offset points')
-            
-            # Muestra el gráfico en Streamlit
-            st.pyplot(plt)
-            st.divider()
-
     else:
         st.error('No se ha cargado ningún DataFrame.')
