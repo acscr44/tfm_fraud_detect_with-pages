@@ -16,16 +16,7 @@ st.set_page_config(
 
 st.markdown(custom_width(), unsafe_allow_html=True)
 
-### Cabecera  ##################################################################################
 
-# Imagen Cabecera de la aplicación
-st.image("src/static/image/banner.webp", use_column_width=True, output_format='auto')
-
-# Titulo de la aplicación
-st.markdown(custom_title('Fraud-Detect'), unsafe_allow_html=True)
-
-# Breve descripción de la aplicación
-st.markdown(description(), unsafe_allow_html=True)
 
 
 ### Sidebar  ##################################################################################

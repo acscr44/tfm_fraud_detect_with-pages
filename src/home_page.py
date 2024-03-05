@@ -3,6 +3,7 @@ import tabula
 import pandas as pd
 import joblib
 import tensorflow as tf
+from components.components import custom_title, description
 
 
 # definición de columnas del dataset
@@ -56,6 +57,18 @@ columnas = ['Time', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10',
 #     st.session_state.df = df
 
 def show_home_page():
+    ### Cabecera  ##################################################################################
+
+    # Imagen Cabecera de la aplicación
+    st.image("src/static/image/banner.webp", use_column_width=True, output_format='auto')
+
+    # Titulo de la aplicación
+    st.markdown(custom_title('Fraud-Detect'), unsafe_allow_html=True)
+
+    # Breve descripción de la aplicación
+    st.markdown(description(), unsafe_allow_html=True)
+
+
     st.subheader("Página de Inicio")
     uploaded_files = st.file_uploader("Elige tus archivos PDF", type="pdf", accept_multiple_files=True, key='home_page_file_uploader')
 
