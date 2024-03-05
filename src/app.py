@@ -41,7 +41,7 @@ def main():
         st.header('Menú Principal')
         st.session_state['page'] = st.selectbox(
             'Elige una opción:',
-            ('Inicio', 'Predicción', 'Análisis Exploratorio', 'Modelo', 'Eto\'o Bot'),
+            ('Inicio', 'Predicción', 'Análisis Exploratorio y Modelo', 'Eto\'o Bot'),
             key='page_selector'
         )
 
@@ -62,10 +62,10 @@ def main():
             st.error('Por favor, carga los datos en la página de Inicio primero.')
 
     # Contenido de otras páginas
-    elif st.session_state['page'] == 'Análisis Exploratorio':
+    elif st.session_state['page'] == 'Análisis Exploratorio y Modelo':
         show_analysis_page()
-    elif st.session_state['page'] == 'Modelo':
-        show_model_page()
+    # elif st.session_state['page'] == 'Modelo':
+    #     show_model_page()
 
     # Contenido de la página de Eto'o Bot
     elif st.session_state['page'] == 'Eto\'o Bot':
@@ -74,7 +74,7 @@ def main():
 
 
     # Botón para cambiar a la página de Predicción
-    if st.session_state['page'] not in ['Predicción', 'Análisis Exploratorio', 'Modelo', 'Eto\'o Bot']:
+    if st.session_state['page'] not in ['Predicción', 'Análisis Exploratorio y Modelo', 'Eto\'o Bot']:
         if st.button('Genera Predicción'):
             if st.session_state.get('df') is not None and not st.session_state['df'].empty:
                 st.session_state['prediction_generated'] = True
