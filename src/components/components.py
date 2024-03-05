@@ -14,7 +14,7 @@ def custom_footer():
             <a href="https://github.com/acscr44" target="_blank">Alejandro Castillo Carmona</a>
         </div>
         """
-    return html_content
+    return print(html_content)
 
 
 def custom_title():
