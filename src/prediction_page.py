@@ -58,7 +58,7 @@ def show_prediction_page():
                 results_df = pd.concat([results_df, new_row], ignore_index=True)
             
             # Estilo CSS para centrar la tabla
-            col1, col2 = st.columns([8, 6]) 
+            col1, col2 = st.columns([3, 6]) 
             with col2:
                 st.dataframe(results_df)
 
