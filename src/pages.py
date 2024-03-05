@@ -3,6 +3,7 @@ import re
 import streamlit as st
 import base64
 from io import BytesIO
+from components.components import custom_title
 
 def cargar_cuaderno_jupyter(path):
     with open(path, 'r', encoding='utf-8') as f:
@@ -48,6 +49,9 @@ def mostrar_cuaderno_jupyter(nb, num_celda_inicio=0, num_celda_final=None):
 
 
 def show_analysis_page():
+    # Titulo de la aplicación
+    st.markdown(custom_title('Fraud-Detect'), unsafe_allow_html=True)
+
     st.subheader("Página de análisis")
     # Aquí puedes añadir más contenido para esta página
 

@@ -1,8 +1,12 @@
 import streamlit as st
 import openai
+from components.components import custom_title
 
 
 def show_etoobot_page():
+        # Titulo de la aplicación
+        st.markdown(custom_title('Fraud-Detect'), unsafe_allow_html=True)
+
         # inicio del chatbot
         st.markdown("<h1 class='title'>Eto'o Bot</h1>", unsafe_allow_html=True)
 
