@@ -1,4 +1,3 @@
-import time
 import nbformat
 import re
 import streamlit as st
@@ -48,8 +47,17 @@ def mostrar_cuaderno_jupyter(nb, num_celda_inicio=0, num_celda_final=None):
 
 
 
+js = '''
+<script>
+    var body = window.parent.document.querySelector(".main");
+    console.log(body);
+    body.scrollTop = 0;
+</script>
+'''
+
+
 def show_analysis_page():
-    space = st.empty()
+    st.components.v1.html(js)
     # Titulo de la aplicación
     st.markdown(custom_title('Fraud-Detect'), unsafe_allow_html=True)
 
@@ -67,12 +75,10 @@ def show_analysis_page():
     # Mostrar el rango especificado de celdas del cuaderno en Streamlit
     mostrar_cuaderno_jupyter(nb, num_celda_inicio, num_celda_final)
     
-    time.sleep(0.1)
-    space.empty()
     
 
 def show_model_page():
-    space = st.empty()
+    st.components.v1.html(js)
     # st.subheader("Entrenamiento del Modelo")
     # Aquí puedes añadir más contenido para esta página   
 
@@ -86,6 +92,3 @@ def show_model_page():
 
     # Mostrar el rango especificado de celdas del cuaderno en Streamlit
     mostrar_cuaderno_jupyter(nb, num_celda_inicio=num_celda_inicio)
-
-    time.sleep(0.1)
-    space.empty()
