@@ -1,4 +1,5 @@
 import nbformat
+import re
 import streamlit as st
 import base64
 from io import BytesIO
@@ -6,6 +7,11 @@ from io import BytesIO
 def cargar_cuaderno_jupyter(path):
     with open(path, 'r', encoding='utf-8') as f:
         return nbformat.read(f, as_version=4)
+
+def limpiar_html(html_content):
+    # Eliminar script específico de Google Colab
+    cleaned_content = re.sub(r'<script>.*?</script>', '', html_content, flags=re.DOTALL)
+    return cleaned_content
 
 def mostrar_cuaderno_jupyter(nb, num_celda_inicio=0, num_celda_final=None):
     for i, cell in enumerate(nb.cells):
@@ -29,7 +35,10 @@ def mostrar_cuaderno_jupyter(nb, num_celda_inicio=0, num_celda_final=None):
                         img_bytes = base64.b64decode(base64_img)
                         st.image(img_bytes, use_column_width=True)
                     if 'text/html' in output.data:
-                        st.markdown(output.data['text/html'], unsafe_allow_html=True)
+                        # Llamar a limpiar_html solo para contenido HTML
+                        cleaned_html = limpiar_html(output.data['text/html'])
+                        st.markdown(cleaned_html, unsafe_allow_html=True)
+                        # st.markdown(output.data['text/html'], unsafe_allow_html=True)
                 elif output.output_type == 'stream':
                     st.text(output.text)
                 elif output.output_type == 'error':
