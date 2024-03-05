@@ -74,10 +74,7 @@ def main():
     # Mostrar en la página principal la opción seleccionada y el valor del slider
     st.write(f'Página actual: {st.session_state["page"]}')
 
-    # Pie de página con información de los creadores
-    if st.session_state['page'] == 'Inicio':
-    #     # Footer de la página de inicio
-        st.markdown(custom_footer(), unsafe_allow_html=True)
+    
 #    # Footer de la página de inicio
 #     # Pie de página con información de los creadores
 #     st.markdown('Creadores:')
@@ -91,25 +88,23 @@ if __name__ == "__main__":
     # Pie de página con información de los creadores
     if st.session_state['page'] == 'Inicio':
     #     # Footer de la página de inicio
-        st.markdown(custom_footer(), unsafe_allow_html=True)
-        # footer = """
-        #     <style>
-        #     .footer {
-        #         padding: 10px;
-        #         font-size: 16px;
-        #         text-align: center;
-        #         border-top: 1px solid #aaa;
-        #         margin-top: 20px;
-        #     }
-        #     </style>
-        #     <div class="footer">
-        #         <p>Creadores:</p>
-        #         <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">**Pablo Oller Pérez**</a><br>
-        #         <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">**Pablo Santos Quirce**</a><br>
-        #         <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">**Alejandro Castillo Carmona**</a>
-        #     </div>
-        #     """
-        # st.markdown(footer, unsafe_allow_html=True)
-
-        
+        # st.markdown(custom_footer(), unsafe_allow_html=True)
+        footer = """
+            <style>
+            .custom-footer {
+                padding: 10px;
+                font-size: 16px;
+                text-align: center;
+                border-top: 1px solid #aaa;
+                margin-top: 20px;
+            }
+            </style>
+            <div class="custom-footer">
+                <p>Creadores:</p>
+                <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">**Pablo Oller Pérez**</a><br>
+                <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">**Pablo Santos Quirce**</a><br>
+                <a href="https://www.linkedin.com/in/pablo-oller-perez-7995721b2" target="_blank">**Alejandro Castillo Carmona**</a>
+            </div>
+            """
+        st.markdown(footer, unsafe_allow_html=True)
         
