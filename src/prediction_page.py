@@ -16,7 +16,7 @@ modelo = joblib.load('src/model/modelo_fraud_detect.pkl')
 # carga del modelo de clustering
 modelo_clustering = joblib.load('src/model/clustering_fraud_detect.pkl')
 
-def show_prediction_page(df):
+def show_prediction_page():
     st.subheader("Predicciones de Fraude")
 
     # Verifica que el DataFrame exista y no esté vacío
