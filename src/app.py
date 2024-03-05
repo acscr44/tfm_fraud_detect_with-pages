@@ -1,7 +1,6 @@
 import streamlit as st
-import pages as pg
-from pages import show_analysis_page
-from model_page import show_model_page
+# import pages as pg
+from pages import show_analysis_page, show_model_page
 from home_page import show_home_page
 from prediction_page import show_prediction_page
 from etoo_bot import show_etoobot_page
