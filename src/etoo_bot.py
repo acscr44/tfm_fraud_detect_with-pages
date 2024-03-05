@@ -57,3 +57,4 @@ def show_etoobot_page():
                 message_placeholder.markdown(full_response)
             # añadido de la respuesta al histórico
             st.session_state.messages.append({"role": "assistant", "content": full_response})
+

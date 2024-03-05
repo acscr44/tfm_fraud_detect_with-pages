@@ -49,13 +49,10 @@ def mostrar_cuaderno_jupyter(nb, num_celda_inicio=0, num_celda_final=None):
 
 
 def show_analysis_page():
-    placeholder = st.empty()
-    
-    
     # Titulo de la aplicación
     st.markdown(custom_title('Fraud-Detect'), unsafe_allow_html=True)
 
-    st.subheader("Análisis Exploratorio")
+    st.subheader("Análisis Exploratorio y Modelo")
     # Aquí puedes añadir más contenido para esta página
 
     # Cargar el cuaderno Jupyter
@@ -71,13 +68,10 @@ def show_analysis_page():
         # Mostrar el rango especificado de celdas del cuaderno en Streamlit
         mostrar_cuaderno_jupyter(nb, num_celda_inicio)
     
-    placeholder.empty()
+
 
 
 def show_model_page():
-    placeholder = st.empty()
-    
-
     # st.subheader("Entrenamiento del Modelo")
     # Aquí puedes añadir más contenido para esta página   
 
@@ -94,4 +88,3 @@ def show_model_page():
         # Mostrar el rango especificado de celdas del cuaderno en Streamlit
         mostrar_cuaderno_jupyter(nb, num_celda_inicio=num_celda_inicio)
 
-    placeholder.empty()
