@@ -12,27 +12,30 @@ columnas = ['Time', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10',
 
 def show_home_page():
     # creación del dataframe
-    df = pd.DataFrame(columns=columnas)
     st.subheader("Página de Inicio")
     uploaded_files = st.file_uploader("Elige tus archivos PDF", type="pdf", accept_multiple_files=True, key='home_page_file_uploader')
 
-    for uploaded_file in uploaded_files:
-        if uploaded_file is not None:
-            # lectura de las tablas de los archivos
-            df_temp_list = tabula.read_pdf(uploaded_file, pages='all')
-            for df_temp in df_temp_list:
-                # comprueba si es un dataframe
-                if isinstance(df_temp, pd.DataFrame):
-                    # comprueba si tiene las columnas correctas
-                    if set(columnas).issubset(df_temp.columns):
-                        # concatenación al dataframe principal
-                        df = pd.concat([df, df_temp], ignore_index=True)
-                    else:
-                        st.write(f"El archivo {uploaded_file.name} no tiene las columnas correctas.")
-                else:
-                    # shn kgm
-                    st.write(f"El archivo {uploaded_file.name} no contiene ninguna tabla.")
+    if uploaded_files:
+        # Procesa solo si hay archivos nuevos o si es la primera carga
+        if 'uploaded_files' not in st.session_state or uploaded_files != st.session_state.uploaded_files:
+            df = pd.DataFrame(columns=columnas)
     
+            for uploaded_file in uploaded_files:
+                if uploaded_file is not None:
+                    # lectura de las tablas de los archivos
+                    df_temp_list = tabula.read_pdf(uploaded_file, pages='all')
+                    for df_temp in df_temp_list:
+                        # comprueba si es un dataframe
+                        if isinstance(df_temp, pd.DataFrame):
+                            # comprueba si tiene las columnas correctas
+                            if set(columnas).issubset(df_temp.columns):
+                                # concatenación al dataframe principal
+                                df = pd.concat([df, df_temp], ignore_index=True)
+                            else:
+                                st.warning(f"El archivo {uploaded_file.name} no tiene las columnas correctas.")
+                        else:
+                            st.warning(f"El archivo {uploaded_file.name} no contiene ninguna tabla.")
+            
     # reemplaza las comas por puntos para poder convertir en float
     pd.set_option('future.no_silent_downcasting', True)
     df = df.replace(',', '.', regex=True)
@@ -47,4 +50,7 @@ def show_home_page():
 
     df['Median'] = df[columnas_median].mean(axis=1)
 
-    return df
+    # return df
+    # Almacena los archivos cargados y el DataFrame en st.session_state
+    st.session_state.uploaded_files = uploaded_files
+    st.session_state.df = df
