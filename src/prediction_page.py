@@ -56,8 +56,10 @@ def show_prediction_page():
                 new_row = pd.DataFrame({"Detección Fraude": ["NO FRAUDE ✅" if df['Class'][i] == 0 else "FRAUDE ❌"], 
                                         "Cluster": [cluster_labels[df['Cluster'][i]]]})
                 results_df = pd.concat([results_df, new_row], ignore_index=True)
-
-            st.dataframe(results_df)
+            
+            col1, col2, col3 = st.columns([1, 6, 1])
+            with col2:    
+                st.dataframe(results_df)
 
             st.divider()
 

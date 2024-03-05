@@ -60,7 +60,7 @@ def show_analysis_page():
 
     # Cargar el cuaderno Jupyter
     nb_path = 'src/static/notebooks/modelo_tfm.ipynb'
-    with st.spinner('Cargando análisis...'):
+    with st.spinner('Cargando análisis exploratorio y Modelo...'):
         # Cargar y mostrar el contenido pesado aquí
         nb = cargar_cuaderno_jupyter(nb_path)
 
