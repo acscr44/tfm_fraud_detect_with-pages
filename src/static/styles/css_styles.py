@@ -44,10 +44,9 @@ WIDTH_STILE = """
 FOOTER_STYLE = """
     <style>
         .custom-footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            padding: 10px;
+            padding: 5px 10px;
+            border-top: 1px solid #aaa;
+            margin-top: 50px;
             font-size: 16px;
             text-align: center;
             border-top: 1px solid #aaa;
