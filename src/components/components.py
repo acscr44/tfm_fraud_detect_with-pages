@@ -1,8 +1,8 @@
 from static.styles.css_styles import *
 
 
-def custom_header(title):
-    return TITLE_STILE + f"""<div class="custom-header"><h1 class='title'>{title}</h1></div>"""
+def custom_header():
+    return HEADER_STILE + f"""<div class="custom-header"></div>"""
 
 
 def custom_footer():
@@ -34,3 +34,18 @@ def custom_title(title):
 
 def custom_width():
     return WIDTH_STILE
+
+def description():
+    html_content = f"""
+    <div>
+        <p>**Fraud Detect** es una aplicación web diseñada para abordar de manera eficiente y precisa la detección de 
+        posibles fraudes bancarios. Su funcionalidad radica en la capacidad de procesar documentos en formato PDF, 
+        extrayendo las tablas contenidas en ellos mediante su lector integrado. A partir de los datos recopilados en 
+        estas tablas, la aplicación lleva a cabo un exhaustivo análisis para identificar posibles irregularidades 
+        financieras que puedan indicar la presencia de actividades fraudulentas entre una lista de clientes. 
+        Además muestra una sucesión de gráficas con datos que pueden ser de utilidad para el usuario.
+        </p>
+    </div>
+
+    """.strip().replace('\n', '')
+    return html_content
