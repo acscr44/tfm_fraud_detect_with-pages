@@ -29,8 +29,8 @@ def custom_footer():
     return html_content
 
 
-def custom_title():
-    return TITLE_STILE
+def custom_title(title):
+    return TITLE_STILE + f"""<div class="title"><h1 class='title'>{title}</h1></div>"""
 
 def custom_width():
     return WIDTH_STILE

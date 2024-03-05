@@ -23,15 +23,15 @@ st.markdown(custom_width(), unsafe_allow_html=True)
 st.markdown(custom_title(), unsafe_allow_html=True)
 # Estilo CSS para el título
 st.image("src/static/image/banner.webp", use_column_width=True, output_format='auto')
-st.markdown("""
-   <style>
-   .title {
-      text-align: center;
-      color: #1D3557;
-   }
+# st.markdown("""
+#    <style>
+#    .title {
+#       text-align: center;
+#       color: #1D3557;
+#    }
    
-   </style>
-""", unsafe_allow_html=True)
+#    </style>
+# """, unsafe_allow_html=True)
 
 
 
