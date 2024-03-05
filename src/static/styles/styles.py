@@ -52,8 +52,8 @@ FOOTER_STYLE = """
         }
 
         .custom-footer p {
-            margin: 0;  /* Elimina el margen por defecto de los párrafos, si es necesario */
-            color: #666;  /* Solo como ejemplo, ajusta el color según tus necesidades */
+            margin: 0;
+            color: #666;
         }
     </style>
     """
