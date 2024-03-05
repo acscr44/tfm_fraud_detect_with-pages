@@ -74,7 +74,10 @@ def main():
     # Mostrar en la página principal la opción seleccionada y el valor del slider
     st.write(f'Página actual: {st.session_state["page"]}')
 
-
+    # Pie de página con información de los creadores
+    if st.session_state['page'] == 'Inicio':
+    #     # Footer de la página de inicio
+        st.markdown(custom_footer(), unsafe_allow_html=True)
 #    # Footer de la página de inicio
 #     # Pie de página con información de los creadores
 #     st.markdown('Creadores:')
