@@ -24,11 +24,6 @@ st.markdown(custom_width(), unsafe_allow_html=True)
 
 
 def main():
-
-    # Placeholder para forzar scroll
-    scroll_placeholder = st.empty()
-
-
     # Inicialización de 'page' en st.session_state
     if 'page' not in st.session_state:
         st.session_state['page'] = 'Inicio'
@@ -68,10 +63,8 @@ def main():
 
     # Contenido de otras páginas
     elif st.session_state['page'] == 'Análisis Exploratorio':
-        scroll_placeholder.empty()
         show_analysis_page()
     elif st.session_state['page'] == 'Modelo':
-        scroll_placeholder.empty()
         show_model_page()
 
     # Contenido de la página de Eto'o Bot

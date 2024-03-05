@@ -47,17 +47,11 @@ def mostrar_cuaderno_jupyter(nb, num_celda_inicio=0, num_celda_final=None):
 
 
 
-js = '''
-<script>
-    var body = window.parent.document.querySelector(".main");
-    console.log(body);
-    body.scrollTop = 0;
-</script>
-'''
-
 
 def show_analysis_page():
-    st.components.v1.html(js)
+    scroll_placeholder = st.empty()
+    scroll_placeholder.empty()
+    
     # Titulo de la aplicación
     st.markdown(custom_title('Fraud-Detect'), unsafe_allow_html=True)
 
@@ -78,7 +72,9 @@ def show_analysis_page():
     
 
 def show_model_page():
-    st.components.v1.html(js)
+    scroll_placeholder = st.empty()
+    scroll_placeholder.empty()
+    
     # st.subheader("Entrenamiento del Modelo")
     # Aquí puedes añadir más contenido para esta página   
 
