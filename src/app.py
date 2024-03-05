@@ -52,20 +52,25 @@ def main():
 
     # Contenido de la página de Inicio
     if st.session_state['page'] == 'Inicio':
-        st.session_state['df'] = show_home_page()
+        # st.session_state['df'] = show_home_page()
+        show_home_page()
+
+    # Contenido de la página de Predicción
+    elif st.session_state['page'] == 'Predicción':
+        # if st.session_state['df'] is not None and not st.session_state['df'].empty:
+        #     show_prediction_page(st.session_state['df'])
+        # else:
+        #     st.error('Por favor, carga los datos en la página de Inicio primero.')
+        if st.session_state.get('df') is not None and not st.session_state['df'].empty:
+            show_prediction_page()  # Ahora accede a `st.session_state['df']` internamente
+        else:
+            st.error('Por favor, carga los datos en la página de Inicio primero.')
 
     # Contenido de otras páginas
     elif st.session_state['page'] == 'Análisis Exploratorio':
         pg.show_analysis_page()
     elif st.session_state['page'] == 'Modelo':
         pg.show_model_page()
-
-    # Contenido de la página de Predicción
-    elif st.session_state['page'] == 'Predicción':
-        if st.session_state['df'] is not None and not st.session_state['df'].empty:
-            show_prediction_page(st.session_state['df'])
-        else:
-            st.error('Por favor, carga los datos en la página de Inicio primero.')
 
     # Contenido de la página de Eto'o Bot
     elif st.session_state['page'] == 'Eto\'o Bot':
