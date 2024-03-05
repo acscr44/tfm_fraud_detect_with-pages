@@ -33,8 +33,8 @@ def main():
         st.session_state['df'] = None
 
     # Nuevo estado para rastrear si la predicción ha sido generada
-    if 'prediction_generated' not in st.session_state:
-        st.session_state['prediction_generated'] = False
+    if 'prediction_requested' not in st.session_state:
+        st.session_state['prediction_requested'] = False
 
     # Sidebar para selección de página
     with st.sidebar:
@@ -77,17 +77,11 @@ def main():
     if st.session_state['page'] not in ['Predicción', 'Análisis Exploratorio', 'Modelo', 'Eto\'o Bot']:
         if st.button('Genera Predicción'):
             if st.session_state.get('df') is not None and not st.session_state['df'].empty:
-                st.session_state['prediction_generated'] = True
+                st.session_state['prediction_requested'] = True
                 st.session_state['page'] = 'Predicción'  # Esto debería actualizar el selectbox automáticamente
     
 
-    # TO-DO: Mantener (este mensaje) solo en home_page para mostrar "Predicción completa".
-    # Mensaje de estado del procesamiento y predicción
-    if st.session_state['page'] == 'Predicción' and st.session_state['prediction_generated']:
-        st.success('Predicción completada.')
-        
-    # # Mostrar en la página principal la opción seleccionada y el valor del slider
-    # st.write(f'Página actual: {st.session_state["page"]}')
+ 
 
     # Pie de página con información de los creadores
     if st.session_state['page'] == 'Inicio':

@@ -68,7 +68,7 @@ def show_analysis_page():
     
 
 def show_model_page():
-    st.subheader("Entrenamiento del Modelo")
+    # st.subheader("Entrenamiento del Modelo")
     # Aquí puedes añadir más contenido para esta página   
 
     # Cargar el cuaderno Jupyter
