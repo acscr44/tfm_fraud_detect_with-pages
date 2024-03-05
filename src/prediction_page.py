@@ -58,21 +58,9 @@ def show_prediction_page():
                 results_df = pd.concat([results_df, new_row], ignore_index=True)
             
             # Estilo CSS para centrar la tabla
-            # Estilo CSS para centrar tablas en la página
-            st.markdown("""
-            <style>
-                /* Centra el contenido de la tabla */
-                .dataframe th, .dataframe td {
-                    text-align: center !important;
-                }
-                /* Centra la tabla en la página */
-                .dataframe {
-                    margin-left: auto !important;
-                    margin-right: auto !important;
-                }
-            </style>
-            """, unsafe_allow_html=True)
-            st.dataframe(results_df)
+            
+            
+                # st.dataframe(results_df)
 
             st.divider()
 
